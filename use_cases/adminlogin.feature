@@ -1,11 +1,11 @@
 Feature: Admin login
 
-  Scenario:  admin login successfully
+  Scenario:  Administrator logs in with valid credentials
     Given loging is pressed
     When the password is correct
     Then give admin authorities
 
-  Scenario:  admin login failed
+  Scenario:  Administrator has the wrong password
     Given loging is pressed
     When the password is wrong
     Then dont give admin authorities
