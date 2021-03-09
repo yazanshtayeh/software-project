@@ -18,7 +18,7 @@ public class addbooktest {
     public void and_and_is_filled(String title, String author, String signture) {
         book.title=title;
         book.author=author;
-        book.signiture=signture;
+        book.signture=signture;
     }
 
     @When("{string} is filled and valid")

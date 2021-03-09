@@ -1,6 +1,6 @@
 public class book {
-    String author;
-    String title;
-    String ISBN;
-    String signature;
+    public static String author;
+    public static String title;
+    public static String ISBN;
+    public static String signture;
 }
