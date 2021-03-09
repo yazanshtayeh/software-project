@@ -12,3 +12,4 @@ Feature: Add book
     When "title" and "author" and "signature" is filled
     And  "isbn" is filled and valid
     When "addbook" is pressed
+    Then show warning;

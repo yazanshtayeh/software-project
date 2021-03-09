@@ -1,24 +1,27 @@
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class logoutest {
+    boolean flag;
     @Given("admin is logged in")
     public void admin_is_logged_in() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        flag =true;
     }
 
     @When("logout is pressed")
     public void logout_is_pressed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Then("remove admin authorities")
     public void remove_admin_authorities() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       flag =false;
     }
 
+    @And("log out")
+    public void logOut() {
+        System.out.println("logged Out");
+    }
 }
