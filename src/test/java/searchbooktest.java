@@ -81,4 +81,32 @@ public class searchbooktest {
         throw new io.cucumber.java.PendingException();
     }
 
+    @Given("the dropdownlist is on {string}")
+    public void theDropdownlistIsOn(String arg0) {
+
+    }
+
+    @Then("search for the book in the library and display it if found")
+    public void searchForTheBookInTheLibraryAndDisplayItIfFound() {
+        
+    }
+
+    @When("{string} is pressed and the drop down list is on {string}")
+    public void isPressedAndTheDropDownListIsOn(String arg0, String arg1) {
+        
+    }
+
+    @Given("user searched for a book")
+    public void userSearchedForABook() {
+        
+    }
+
+    @Then("show a massage")
+    public void showAMassage() {
+        
+    }
+
+    @Then("show all a list with all books that have the info that was entered")
+    public void showAllAListWithAllBooksThatHaveTheInfoThatWasEntered() {
+    }
 }

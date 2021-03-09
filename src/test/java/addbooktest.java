@@ -20,9 +20,9 @@ public class addbooktest {
 
     @When("{string} and {string} and {string} is filled")
     public void and_and_is_filled(String title, String author, String signture) {
-        book.title = title;
-        book.author = author;
-        book.signture = signture;
+        book.setTitle(title);
+        book.setAuthor(author);
+        book.setSignture(signture);
     }
 
     @When("{string} is filled and valid")
@@ -37,8 +37,6 @@ public class addbooktest {
 
     @Then("add the {string} information to the library")
     public void add_the_information_to_the_library(String string) {
-
-
         lib.add(b);
     }
 

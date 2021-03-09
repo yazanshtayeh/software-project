@@ -2,19 +2,19 @@ Feature: search for a book
   Background: user entered a "substring"
 
   Scenario:user Searching for a substring of the title
-    Given the "dropdownlist" is on "title"
+    Given the dropdownlist is on "title"
     When "searchbook" is pressed
     Then search for the book in the library and display it if found
 
   Scenario:user Searching for a substring of the author
     Given user entered a substring of a author
 
-    When "searchbook" is pressed and the drop down list is on author
+    When "searchbook" is pressed and the drop down list is on "author"
     Then search for the book in the library and display it if found
 
   Scenario:user Searching for a substring of the ISBN
     Given user entered a substring of a ISBN
-    When "searchbook" is pressed and the drop down list is on ISBN
+    When "searchbook" is pressed and the drop down list is on "ISBN"
     Then search for the book in the library and display it if found
 
 
