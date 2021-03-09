@@ -13,7 +13,11 @@ public class addbooktest {
     public void is_logged_in(String string) {
 
     }
+    @Given("admin is not logged in")
+    public void admin_is_not_logged_in() {
+        // Write code here that turns the phrase above into concrete actions
 
+    }
     @When("{string} and {string} and {string} is filled")
     public void and_and_is_filled(String title, String author, String signture) {
         book.title=title;
@@ -35,7 +39,7 @@ public class addbooktest {
 
     @When("{string} is pressed")
     public void is_pressed(String string) {
-
+        throw new io.cucumber.java.PendingException();
     }
 
     @Then("add the {string} information to the library")
