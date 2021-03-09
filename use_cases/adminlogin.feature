@@ -1,5 +1,6 @@
 Feature: Admin login
 
+
   Background: user is not logged in
 
   Scenario:  Administrator logs in with valid credentials

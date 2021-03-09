@@ -16,4 +16,3 @@ Feature: Add book
     And  "signature" is filled
     And  "isbn" is filled and valid
     When "addbook" is pressed
-    Then show a warning massage
