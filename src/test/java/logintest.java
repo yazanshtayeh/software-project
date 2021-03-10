@@ -8,7 +8,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class logintest {
-     boolean flag = false;
+    public static boolean flag = false;
      int pass;
      int id;
 

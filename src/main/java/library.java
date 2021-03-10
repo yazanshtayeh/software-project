@@ -12,10 +12,10 @@ public class library {
     }
 
 
-    public ArrayList<book> books=new ArrayList<>();
+    public static ArrayList<book> books=new ArrayList<>();
 
 
-    public void addbook(book a){
+    public static void addbook(book a){
         books.add(a);
     }
 

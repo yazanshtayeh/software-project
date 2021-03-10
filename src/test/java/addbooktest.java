@@ -10,12 +10,10 @@ import java.util.ArrayList;
 
 public class addbooktest {
     book b=new book();
-    ArrayList<book> lib = new ArrayList<>();
-    boolean  flag = false;
 
     @Given("{string} is logged in")
     public void is_logged_in(String string) {
-        flag = true;
+        logintest.flag = true;
     }
 
     @When("{string} and {string} and {string} is filled")
@@ -39,16 +37,18 @@ public class addbooktest {
     public void add_the_information_to_the_library(String string) {
 
 
-        lib.add(b);
+        library.addbook(b);
     }
 
 
     @Given("admin is not logged in")
     public void adminIsNotLoggedIn() {
+        logintest.flag=false;
     }
 
     @Then("show warning;")
     public void showWarning() {
         System.out.println("you Should ba an admin ");
+        assertTrue(true);
     }
 }
