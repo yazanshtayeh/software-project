@@ -5,32 +5,29 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
+
 public class addbooktest {
-    book b;
-    ArrayList <book>lib;
+    book b=new book();
+    ArrayList<book> lib = new ArrayList<>();
+    boolean  flag = false;
+
     @Given("{string} is logged in")
     public void is_logged_in(String string) {
-
+        flag = true;
     }
 
     @When("{string} and {string} and {string} is filled")
     public void and_and_is_filled(String title, String author, String signture) {
-        book.title=title;
-        book.author=author;
-        book.signture=signture;
+        book.title = title;
+        book.author = author;
+        book.signture = signture;
     }
 
     @When("{string} is filled and valid")
     public void is_filled_and_valid(String ISBN) {
-        int sum=0;
-        char ar[]=ISBN.toCharArray();
-        assertFalse( ar.length!=10);
-        for(int i = 0; i<10; i++){
-            sum+=ar[10-i]*i;
-        }
-        double avg =sum/11;
-        assertTrue(avg==(int) avg);
+        assertTrue(b.checkISBN(ISBN));
     }
 
     @When("{string} is pressed")
@@ -40,7 +37,18 @@ public class addbooktest {
 
     @Then("add the {string} information to the library")
     public void add_the_information_to_the_library(String string) {
+
+
         lib.add(b);
     }
 
+
+    @Given("admin is not logged in")
+    public void adminIsNotLoggedIn() {
+    }
+
+    @Then("show warning;")
+    public void showWarning() {
+        System.out.println("you Should ba an admin ");
+    }
 }
