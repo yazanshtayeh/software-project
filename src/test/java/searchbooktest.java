@@ -2,83 +2,97 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.awt.*;
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class searchbooktest {
-    @Given("user entered a substring of a title")
-    public void user_entered_a_substring_of_a_title() {
+
+    library books=new library();
+    ArrayList<book>title =new ArrayList<>();
+    ArrayList<book>author =new ArrayList<>();
+    ArrayList<book>isbn =new ArrayList<>();
+
+
+    @Given("the user enterd a {string} for title")
+    public void the_user_enterd_a_for_title(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("search book is pressed and the drop down list is on title")
-    public void search_book_is_pressed_and_the_drop_down_list_is_on_title() {
+    @When("the user sareach for a book by title {string}")
+    public void the_user_sareach_for_a_book_by_title(String string) {
+        title=books.searchByTitle(string);
+    }
+
+    @Then("a list of all books that have the title should be printed on the console")
+    public void a_list_of_all_books_that_have_the_title_should_be_printed_on_the_console() {
+
+        if(title.isEmpty()){
+            System.out.println("library is empty");
+            assertFalse(true);
+
+        }
+        else{
+            System.out.println("title\tauthor\tISBN\tsignture\n");
+            for(int i=0;i<title.size();i++)
+                title.get(i).print();}
+            assertTrue(false);
+
+    }
+
+    @Given("the user enterd a {string} for author")
+    public void the_user_enterd_a_for_author(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("search for the book information in the library")
-    public void search_for_the_book_information_in_the_library() {
+    @When("the user sareach for a book by author {string}")
+    public void the_user_sareach_for_a_book_by_author(String string) {
+       author=books.searchByAuthor(string);
+    }
+
+    @Then("a list of all books that have the author should be printed on the console")
+    public void a_list_of_all_books_that_have_the_author_should_be_printed_on_the_console() {
+        if(author.isEmpty()){
+            System.out.println("library is empty");
+            assertFalse(true);
+
+        }
+        else{
+            System.out.println("title\tauthor\tISBN\tsignture\n");
+            for(int i=0;i<author.size();i++)
+                author.get(i).print();
+        }
+        assertTrue(false);
+    }
+
+    @Given("the user enterd a {string} for ISBN")
+    public void the_user_enterd_a_for_isbn(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("user entered a substring of a author")
-    public void user_entered_a_substring_of_a_author() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("the user sareach for a book by ISBN {string}")
+    public void the_user_sareach_for_a_book_by_isbn(String string) {
+        isbn=books.searchByISBN(string);
     }
 
-    @When("search book is pressed and the drop down list is on author")
-    public void search_book_is_pressed_and_the_drop_down_list_is_on_author() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("a list of all books that have the ISBN should be printed on the console")
+    public void a_list_of_all_books_that_have_the_isbn_should_be_printed_on_the_console() {
+        if(isbn.isEmpty()){
+            System.out.println("library is empty");
+            assertFalse(true);
+
+        }
+        else{
+            System.out.println("title\tauthor\tISBN\tsignture\n");
+            for(int i=0;i<isbn.size();i++)
+                isbn.get(i).print();}
+        assertTrue(false);
     }
 
-    @Given("user entered a substring of a ISBN")
-    public void user_entered_a_substring_of_a_isbn() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("search book is pressed and the drop down list is on ISBN")
-    public void search_book_is_pressed_and_the_drop_down_list_is_on_isbn() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("searchbook pressed")
-    public void searchbook_pressed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("search same as normal user")
-    public void search_same_as_normal_user() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Given("user entered information")
-    public void user_entered_information() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("no book matches the information")
-    public void no_book_matches_the_information() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("more than one book matches the information")
-    public void more_than_one_book_matches_the_information() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("show all books massage")
-    public void show_all_books_massage() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
 }

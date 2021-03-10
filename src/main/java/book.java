@@ -3,6 +3,42 @@ public class book {
     public static String title;
     public static String ISBN;
     public static String signture;
+
+    public static String getAuthor() {
+        return author;
+    }
+
+    public static String getTitle() {
+        return title;
+    }
+
+    public static String getISBN() {
+        return ISBN;
+    }
+
+    public static String getSignture() {
+        return signture;
+    }
+
+    public static void setAuthor(String author) {
+        book.author = author;
+    }
+
+    public static void setTitle(String title) {
+        book.title = title;
+    }
+
+    public static void setISBN(String ISBN) {
+        book.ISBN = ISBN;
+    }
+
+    public static void setSignture(String signture) {
+        book.signture = signture;
+    }
+
+    public book() {
+    }
+
     public static boolean checkISBN(String ISBN){
         int sum = 0;
         char ar[] = ISBN.toCharArray();
@@ -15,7 +51,10 @@ public class book {
 
         }
 
-        double avg = sum / 11;
-        return (avg == (int) avg);
+        int avg = sum % 11;
+        return (avg==0);
+    }
+    public void print(){
+        System.out.println(book.getTitle()+"\t"+book.getAuthor()+"\t"+book.getISBN()+"\t"+book.getSignture()+"\n");
     }
 }
