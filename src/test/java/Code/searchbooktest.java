@@ -1,8 +1,11 @@
+package Code;
+
+import Code.book;
+import Code.library;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertFalse;
@@ -23,10 +26,10 @@ public class searchbooktest {
         title = books.searchByTitle(string);
     }
 
-    @When("the user sareach for a book by title {string}")
+    @When("the user sareach for a Code.book by title {string}")
     public void the_user_sareach_for_a_book_by_title(String string) {
         if (title.isEmpty()) {
-            System.out.println("library is empty");
+            System.out.println("Code.library is empty");
             Assert_title = true;
         } else {
             System.out.println("title\tauthor\tISBN\tsignture\n");
@@ -46,10 +49,10 @@ public class searchbooktest {
         author = books.searchByAuthor(string);
     }
 
-    @When("the user sareach for a book by author {string}")
+    @When("the user sareach for a Code.book by author {string}")
     public void the_user_sareach_for_a_book_by_author(String string) {
         if (author.isEmpty()) {
-            System.out.println("library is empty");
+            System.out.println("Code.library is empty");
             Assert_author = true;
 
         } else {
@@ -71,10 +74,10 @@ public class searchbooktest {
         isbn = books.searchByISBN(string);
     }
 
-    @When("the user sareach for a book by ISBN {string}")
+    @When("the user sareach for a Code.book by ISBN {string}")
     public void the_user_sareach_for_a_book_by_isbn(String string) {
         if (isbn.isEmpty()) {
-            System.out.println("library is empty");
+            System.out.println("Code.library is empty");
             Assert_isbn = true;
         } else {
             System.out.println("title\tauthor\tISBN\tsignture\n");

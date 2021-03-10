@@ -1,12 +1,11 @@
+package Code;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-import java.util.ArrayList;
 
 public class addbooktest {
     book b=new book();
@@ -33,12 +32,7 @@ public class addbooktest {
 
     }
 
-    @Then("add the {string} information to the library")
-    public void add_the_information_to_the_library(String string) {
 
-
-        library.addbook(b);
-    }
 
 
     @Given("admin is not logged in")
@@ -50,5 +44,10 @@ public class addbooktest {
     public void showWarning() {
         System.out.println("you Should ba an admin ");
         assertTrue(true);
+    }
+
+    @Then("add the book information to the library")
+    public void addTheBookInformationToTheLibrary() {
+        library.addbook(b);
     }
 }

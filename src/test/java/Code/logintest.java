@@ -1,3 +1,5 @@
+package Code;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -35,7 +37,7 @@ public class logintest {
 
     @Then("show a wrong info massage")
     public void show_a_wrong_info_massage() {
-    System.out.println("wrong password");
+         System.out.println("wrong password");
     }
 
 

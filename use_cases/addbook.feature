@@ -5,7 +5,7 @@ Feature: Add book
     When "title" and "author" and "signature" is filled
     And  "isbn" is filled and valid
     And "addbook" is pressed
-    Then add the "book" information to the library
+    Then add the book information to the library
 
   Scenario:guest added a book
     Given admin is not logged in
