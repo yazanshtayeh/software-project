@@ -7,10 +7,10 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.assertTrue;
 
 public class logoutest {
-
+user admin =new user();
     @Given("admin is logged in")
     public void admin_is_logged_in() {
-        logintest.flag =true;
+        admin.logged =true;
     }
 
     @When("logout is pressed")
@@ -20,7 +20,7 @@ public class logoutest {
 
     @Then("remove admin authorities")
     public void remove_admin_authorities() {
-        logintest.flag =false;
+        admin.setLogged(false);
     }
 
     @And("log out")

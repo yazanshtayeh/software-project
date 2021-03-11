@@ -12,14 +12,14 @@ public class addbooktest {
 
     @Given("{string} is logged in")
     public void is_logged_in(String string) {
-        logintest.flag = true;
+        logintest.admin.isLogged() = true;
     }
 
     @When("{string} and {string} and {string} is filled")
     public void and_and_is_filled(String title, String author, String signture) {
-        book.title = title;
-        book.author = author;
-        book.signture = signture;
+        book.setTitle(title);;
+        book.setAuthor(author);
+        book.setSignture(signture);
     }
 
     @When("{string} is filled and valid")
