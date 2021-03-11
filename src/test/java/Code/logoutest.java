@@ -1,13 +1,16 @@
+package Code;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import static org.junit.Assert.assertTrue;
 
 public class logoutest {
-    boolean flag;
+
     @Given("admin is logged in")
     public void admin_is_logged_in() {
-        flag =true;
+        logintest.flag =true;
     }
 
     @When("logout is pressed")
@@ -17,11 +20,16 @@ public class logoutest {
 
     @Then("remove admin authorities")
     public void remove_admin_authorities() {
-       flag =false;
+        logintest.flag =false;
     }
 
     @And("log out")
     public void logOut() {
+        assertTrue(true);
         System.out.println("logged Out");
+    }
+
+    @Given("user pressed logout")
+    public void userPressedLogout() {
     }
 }

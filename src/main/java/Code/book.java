@@ -1,8 +1,11 @@
+package Code;
+
 public class book {
     public static String author;
     public static String title;
     public static String ISBN;
     public static String signture;
+
     public static String getAuthor() {
         return author;
     }
@@ -18,8 +21,6 @@ public class book {
     public static String getSignture() {
         return signture;
     }
-
-
 
     public static void setAuthor(String author) {
         book.author = author;
@@ -37,6 +38,9 @@ public class book {
         book.signture = signture;
     }
 
+    public book() {
+    }
+
     public static boolean checkISBN(String ISBN){
         int sum = 0;
         char ar[] = ISBN.toCharArray();
@@ -49,7 +53,10 @@ public class book {
 
         }
 
-        double avg = sum / 11;
-        return (avg == (int) avg);
+        int avg = sum % 11;
+        return (avg==0);
+    }
+    public void print(){
+        System.out.println(book.getTitle()+"\t"+book.getAuthor()+"\t"+book.getISBN()+"\t"+book.getSignture()+"\n");
     }
 }

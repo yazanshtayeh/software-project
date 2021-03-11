@@ -4,6 +4,8 @@ Feature: Admin login
   Background: user is not logged in
 
   Scenario:  Administrator logs in with valid credentials
+    Given the correct password is 222 and correct id is 222
+    Given the correct password is 222 and correct id is 222
     When user fills id with 222 and password with 222
     Then give admin authorities and go to admin page
 
