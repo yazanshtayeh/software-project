@@ -9,10 +9,10 @@ import static org.junit.Assert.assertTrue;
 
 public class addbooktest {
     book b=new book();
-
+    Admin user=new Admin();
     @Given("{string} is logged in")
     public void is_logged_in(String string) {
-        logintest.admin.isLogged() = true;
+
     }
 
     @When("{string} and {string} and {string} is filled")
@@ -37,7 +37,7 @@ public class addbooktest {
 
     @Given("admin is not logged in")
     public void adminIsNotLoggedIn() {
-        logintest.flag=false;
+        user.logOut();
     }
 
     @Then("show warning;")

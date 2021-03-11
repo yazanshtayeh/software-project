@@ -2,25 +2,25 @@ Feature: search for a book
   Background: user entered a "substring"
 
   Scenario:Searching for a substring of the title
-  Given  the user enterd a "substring" for title
-    When the user sareach for a book by title "The Gambler"
+  Given  the user entered a "substring" for title
+    When the user search for a book by title "The Gambler"
     Then a list of all books that have the title should be printed on the console
 
   Scenario:Searching for a substring of the author
-    Given the user enterd a "substring" for author
-    When the user sareach for a book by author "Fyodor Dostoevsky"
+    Given the user entered a "substring" for author
+    When the user search for a book by author "Fyodor Dostoevsky"
     Then a list of all books that have the author should be printed on the console
 
   Scenario:Searching for a substring of the ISBN
-    Given the user enterd a "substring" for ISBN
-    When the user sareach for a book by ISBN "1466272325"
+    Given the user entered a "substring" for ISBN
+    When the user search for a book by ISBN "1466272325"
     Then a list of all books that have the ISBN should be printed on the console
 
 
- # Scenario: admin Searching for a book
-  #  Given admin is logged in
-   # When "searchbook" is pressed
-    #Then search same as normal user
+  Scenario: admin Searching for a book
+    Given admin is logged in
+    When "searchbook" is pressed
+    Then search same as normal user
 
 
  # Scenario:search failed

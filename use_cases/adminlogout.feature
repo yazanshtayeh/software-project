@@ -1,7 +1,5 @@
 Feature: admin logout
-Background: admin is logged in
   Scenario: admin logs out
-    Given user pressed logout
+    Given admin is logged in
     When "logout" is pressed
     Then remove admin authorities
-    And log out

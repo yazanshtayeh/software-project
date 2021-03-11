@@ -21,18 +21,18 @@ public class searchbooktest {
     boolean Assert_author = false;
     boolean Assert_isbn = false;
 
-    @Given("the user enterd a {string} for title")
+    @Given("the user entered a {string} for title")
     public void the_user_enterd_a_for_title(String string) {
         title = books.searchByTitle(string);
     }
 
-    @When("the user sareach for a Code.book by title {string}")
+    @When("the user search for a Code.book by title {string}")
     public void the_user_sareach_for_a_book_by_title(String string) {
         if (title.isEmpty()) {
             System.out.println("Code.library is empty");
             Assert_title = true;
         } else {
-            System.out.println("title\tauthor\tISBN\tsignture\n");
+            System.out.println("title\tauthor\tISBN\tsignature\n");
             for (int i = 0; i < title.size(); i++)
                 title.get(i).print();
         }
@@ -44,19 +44,19 @@ public class searchbooktest {
         assertTrue(Assert_title);
     }
 
-    @Given("the user enterd a {string} for author")
+    @Given("the user entered a {string} for author")
     public void the_user_enterd_a_for_author(String string) {
         author = books.searchByAuthor(string);
     }
 
-    @When("the user sareach for a Code.book by author {string}")
+    @When("the user search for a Code.book by author {string}")
     public void the_user_sareach_for_a_book_by_author(String string) {
         if (author.isEmpty()) {
             System.out.println("Code.library is empty");
             Assert_author = true;
 
         } else {
-            System.out.println("title\tauthor\tISBN\tsignture\n");
+            System.out.println("title\tauthor\tISBN\tsignature\n");
             for (int i = 0; i < author.size(); i++)
                 author.get(i).print();
             Assert_author = true;
@@ -69,18 +69,18 @@ public class searchbooktest {
         assertTrue(Assert_author);
     }
 
-    @Given("the user enterd a {string} for ISBN")
-    public void the_user_enterd_a_for_isbn(String string) {
+    @Given("the user entered a {string} for ISBN")
+    public void the_user_entered_a_for_isbn(String string) {
         isbn = books.searchByISBN(string);
     }
 
-    @When("the user sareach for a Code.book by ISBN {string}")
-    public void the_user_sareach_for_a_book_by_isbn(String string) {
+    @When("the user search for a Code.book by ISBN {string}")
+    public void the_user_search_for_a_book_by_isbn(String string) {
         if (isbn.isEmpty()) {
             System.out.println("Code.library is empty");
             Assert_isbn = true;
         } else {
-            System.out.println("title\tauthor\tISBN\tsignture\n");
+            System.out.println("title\tauthor\tISBN\tsignature\n");
             for (int i = 0; i < isbn.size(); i++)
                 isbn.get(i).print();
             Assert_isbn = true;
