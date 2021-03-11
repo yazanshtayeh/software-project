@@ -5,20 +5,20 @@ import java.util.ArrayList;
 
 public class library {
 
-    public  ArrayList<book> books=new ArrayList<>();
+    public  ArrayList<book> books=new ArrayList<>(1);
     public library() {
     }
 
     public library(ArrayList<book> a) {
-        for(int i=0;i<a.size();i++)
-            books.add(a.get(i));
+        books.addAll(a);
     }
 
     public  void addbook(book a){
         books.add(a);
     }
     public  void addbook(String title,String author,String isbn,String signature){
-       book n=new book();
+       book n=new book(title,author,isbn,signature);
+
        if(n.checkISBN(isbn)){
            n.setAuthor(author);
            n.setTitle(title);
@@ -31,7 +31,7 @@ public class library {
     public ArrayList<book> searchByAuthor(String author){
         ArrayList<book> searched=new ArrayList<>();
         for(int i=0;i<books.size();i++){
-            if(books.get(i).getAuthor().equals(author))
+            if(books.get(i).getAuthor().contentEquals(author))
                 searched.add(books.get(i));
         }
         return searched;
@@ -39,7 +39,7 @@ public class library {
     public ArrayList<book> searchByTitle(String title){
         ArrayList<book> searched=new ArrayList<>();
         for(int i=0;i<books.size();i++){
-            if(books.get(i).getTitle().equals(title)){
+            if(books.get(i).getTitle().contentEquals(title)){
                 searched.add(books.get(i));
             }
         }
@@ -48,7 +48,7 @@ public class library {
     public ArrayList<book> searchByISBN(String isbn){
         ArrayList<book> searched=new ArrayList<>();
         for(int i=0;i<books.size();i++){
-            if(books.get(i).getAuthor().equals(isbn))
+            if(books.get(i).getISBN().equals(isbn))
                 searched.add(books.get(i));
 
         }

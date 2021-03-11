@@ -11,18 +11,18 @@ Feature: search for a book
       |The Lord of the Rings-J.R.R. Tolkien-0261103253-Tolkien1954|
 
  Scenario:Searching for a substring of the title
-   When the user search for a book by title "Da Vinci Code"
+   When the user search for a book by title "Lord of the flies"
    Then a list of all books that have the title should be printed on the console
 
-  #Scenario:Searching for a substring of the author
-   # Given the user entered a "substring" for author
-#    When the user search for a book by author "Fyodor Dostoevsky"
-#    Then a list of all books that have the author should be printed on the console
-#
-#  Scenario:Searching for a substring of the ISBN
-#    Given the user entered a "substring" for ISBN
-#    When the user search for a book by ISBN "1466272325"
-#    Then a list of all books that have the ISBN should be printed on the console
+  Scenario:Searching for a substring of the author
+    Given the user entered a "substring" for author
+    When the user search for a book by author "Dan Brown"
+    Then a list of all books that have the author should be printed on the console
+
+  Scenario:Searching for a substring of the ISBN
+    Given the user entered a "substring" for ISBN
+    When the user search for a book by ISBN "1466272325"
+    Then a list of all books that have the ISBN should be printed on the console
 
 
  # Scenario: admin Searching for a book

@@ -1,38 +1,42 @@
 package Code;
 
 public class book {
-    public static String author;
-    public static String title;
-    public static String ISBN;
-    public static String signature;
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-    public static String getAuthor() {
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+
+    public  String author;
+    public  String title;
+    public  String ISBN;
+    public String signature;
+
+    public String getAuthor() {
         return author;
     }
 
-    public static String getTitle() {
+    public  String getTitle() {
         return title;
     }
 
-    public static String getISBN() {
+    public String getISBN() {
         return ISBN;
     }
 
-    public static String getSignature() { return signature; }
+    public String getSignature() { return signature; }
 
-    public static void setSignature(String signature) { book.signature = signature; }
 
-    public static void setAuthor(String author) {
-        book.author = author;
-    }
-
-    public static void setTitle(String title) {
-        book.title = title;
-    }
-
-    public static void setISBN(String ISBN) {
-        book.ISBN = ISBN;
-    }
 
 
 
@@ -46,7 +50,7 @@ public class book {
             setSignature(s);
     }
 
-    public static boolean checkISBN(String ISBN){
+    public boolean checkISBN(String ISBN){
         int sum = 0;
         char ar[] = ISBN.toCharArray();
         boolean lengthFlag = ar.length != 10;
@@ -61,6 +65,6 @@ public class book {
         return (avg==0);
     }
     public void print(){
-        System.out.println(book.getTitle()+"\t"+book.getAuthor()+"\t"+book.getISBN()+"\t"+book.getSignature()+"\n");
+        System.out.println(this.getTitle()+"\t"+this.getAuthor()+"\t"+this.getISBN()+"\t"+this.getSignature()+"\n");
     }
 }

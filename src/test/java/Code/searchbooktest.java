@@ -34,9 +34,9 @@ public class searchbooktest {
             lib.addbook(specs[0],specs[1],specs[2],specs[3]);
             lib.books.get(i).print();
         }
-        for(int i=0;i<lib.books.size();i++){
-            System.out.println(lib.books.get(i).getTitle()+lib.books.get(i).getAuthor()+lib.books.get(i).getISBN()+lib.books.get(i).getSignature());
-        }
+//        for(int i=0;i<lib.books.size();i++){
+//            System.out.println(lib.books.get(i).getTitle()+lib.books.get(i).getAuthor()+lib.books.get(i).getISBN()+lib.books.get(i).getSignature());
+//        }
     }
 
 
@@ -47,11 +47,7 @@ public class searchbooktest {
 
     @When("the user search for a book by title {string}")
     public void the_user_search_for_a_book_by_title(String string) {
-
         title = lib.searchByTitle(string);
-        if(title.isEmpty())System.out.println("sssss");
-        else System.out.println("aaaaa");
-
     }
 
     @Then("a list of all books that have the title should be printed on the console")
@@ -65,22 +61,20 @@ public class searchbooktest {
                 title.get(i).print();
             Assert_title = true;
         }
-        System.out.println("lalalafasf");
         assertTrue(Assert_title);
     }
 
     @Given("the user entered a {string} for author")
     public void the_user_entered_a_for_author(String string) {
-        author = lib.searchByAuthor(string);
-        System.out.println("author.get(0).print()");
+
     }
 
     @When("the user search for a book by author {string}")
     public void the_user_search_for_a_book_by_author(String string) {
+        author = lib.searchByAuthor(string);
         if (author.isEmpty()) {
             System.out.println("library is empty");
             Assert_author = false;
-
         } else {
             System.out.println("title\tauthor\tISBN\tsignature\n");
             for (int i = 0; i < author.size(); i++)
@@ -96,11 +90,12 @@ public class searchbooktest {
 
     @Given("the user entered a {string} for ISBN")
     public void the_user_entered_a_for_isbn(String string) {
-        isbn = lib.searchByISBN(string);
+
     }
 
     @When("the user search for a book by ISBN {string}")
     public void the_user_search_for_a_book_by_isbn(String string) {
+        isbn = lib.searchByISBN(string);
         if (isbn.isEmpty()) {
             System.out.println("library is empty");
             Assert_isbn = false;
