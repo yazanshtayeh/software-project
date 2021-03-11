@@ -11,17 +11,17 @@ import static org.junit.Assert.assertTrue;
 
 public class logintest {
     public static boolean flag = false;
-     int pass;
-     int id;
+
+     user b=new user();
 
      @Given("the correct password is {int} and correct id is {int}")
     public void theCorrectPasswordIsAndCorrectIdIs(int arg0, int arg1) {
-        pass = arg0;
-        id = arg1;
+        b.pass = arg0;
+        b.id = arg1;
     }
     @When("user fills id with {int} and password with {int}")
     public void userFillsIdWithAndPasswordWith(int int1, int int2) {
-        if (int1 == pass && int2 == id) flag = true;
+        if (int1 == b.pass && int2 == b.id) flag = true;
     }
 
     @Then("give admin authorities and go to admin page")
