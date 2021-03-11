@@ -4,7 +4,7 @@ public class book {
     public static String author;
     public static String title;
     public static String ISBN;
-    public static String signture;
+    public static String signature;
 
     public static String getAuthor() {
         return author;
@@ -18,9 +18,9 @@ public class book {
         return ISBN;
     }
 
-    public static String getSignture() {
-        return signture;
-    }
+    public static String getSignature() { return signature; }
+
+    public static void setSignature(String signature) { book.signature = signature; }
 
     public static void setAuthor(String author) {
         book.author = author;
@@ -34,11 +34,16 @@ public class book {
         book.ISBN = ISBN;
     }
 
-    public static void setSignture(String signture) {
-        book.signture = signture;
-    }
+
 
     public book() {
+    }
+
+    public book(String a,String t,String i,String s){
+            setAuthor(a);
+            setTitle(t);
+            setISBN(i);
+            setSignature(s);
     }
 
     public static boolean checkISBN(String ISBN){
@@ -52,11 +57,10 @@ public class book {
         catch(Exception e){
 
         }
-
         int avg = sum % 11;
         return (avg==0);
     }
     public void print(){
-        System.out.println(book.getTitle()+"\t"+book.getAuthor()+"\t"+book.getISBN()+"\t"+book.getSignture()+"\n");
+        System.out.println(book.getTitle()+"\t"+book.getAuthor()+"\t"+book.getISBN()+"\t"+book.getSignature()+"\n");
     }
 }
