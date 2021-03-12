@@ -11,12 +11,12 @@ Feature: search for a book
       |The Lord of the Rings-J.R.R. Tolkien-0261103253-Tolkien1954|
 
  Scenario:Searching for a substring of the title
-   When the user search for a book by title "Lord"
+   When the user search for a book by title "13 Reasons Why"
    Then a list of all books that have the title should be printed on the console
 
   Scenario:Searching for a substring of the author
     Given the user entered a "substring" for author
-    When the user search for a book by author "to"
+    When the user search for a book by author "William Golding"
     Then a list of all books that have the author should be printed on the console
 
   Scenario:Searching for a substring of the ISBN
@@ -25,18 +25,19 @@ Feature: search for a book
     Then a list of all books that have the ISBN should be printed on the console
 
 
- # Scenario: admin Searching for a book
-   # Given admin is logged in
-   # When "searchbook" is pressed
-    #Then search same as normal user
+  Scenario:Searching for a substring as a admin
+    Given the user entered a "substring" for author
+    Given user is logged in
+    When the user search for a book by author "William Golding"
+    Then a list of all books that have the author should be printed on the console
 
 
- # Scenario:search failed
-  #  Given user searched for a book
-   # When no book matches the information
-    #Then show a massage
 
-  #Scenario: Found more than one book
-   # Given user searched for a book
-    #When more than one book matches the information
-    #Then show all a list with all books that have the info that was entered
+  Scenario:search failed
+    Given the user entered a substring for book
+    When the user search for a book by ISBN "1"
+    Then show warning
+
+  Scenario:Searching for multiple books
+    When the user search for a book by title "Lord"
+    Then a list of all books that have the title should be printed on the console

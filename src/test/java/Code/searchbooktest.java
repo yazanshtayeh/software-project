@@ -16,7 +16,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class searchbooktest {
-
+    Admin user =new Admin();
     library lib = new library();
     ArrayList<book> title = new ArrayList<>();
     ArrayList<book> author = new ArrayList<>();
@@ -32,7 +32,6 @@ public class searchbooktest {
         for(int i =0;i<data.size();i++){
             String[] specs=data.get(i).split("-");
             lib.addbook(specs[0],specs[1],specs[2],specs[3]);
-            lib.books.get(i).print();
         }
 //        for(int i=0;i<lib.books.size();i++){
 //            System.out.println(lib.books.get(i).getTitle()+lib.books.get(i).getAuthor()+lib.books.get(i).getISBN()+lib.books.get(i).getSignature());
@@ -113,4 +112,18 @@ public class searchbooktest {
     }
 
 
+    @Given("the user entered a substring for book")
+    public void theUserEnteredASubstringForBook() {
+
+    }
+
+    @Then("show warning")
+    public void showWarning() {
+        assertFalse(Assert_isbn);
+    }
+
+    @Given("user is logged in")
+    public void userIsLoggedIn() {
+        user.setLogged(true);
+    }
 }
