@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class searchbooktest {
+public class searchbookSteps {
     Admin user =new Admin();
     library lib = new library();
     ArrayList<book> title = new ArrayList<>();
@@ -38,11 +38,6 @@ public class searchbooktest {
 //        }
     }
 
-
-//    @Given("the user entered a {string} for title")
-//    public void the_user_entered_a_for_title(String string) {
-//
-//    }
 
     @When("the user search for a book by title {string}")
     public void the_user_search_for_a_book_by_title(String string) {
@@ -111,19 +106,19 @@ public class searchbooktest {
         assertTrue(Assert_isbn);
     }
 
-
     @Given("the user entered a substring for book")
     public void theUserEnteredASubstringForBook() {
 
     }
 
-    @Then("show warning")
-    public void showWarning() {
-        assertFalse(Assert_isbn);
-    }
-
     @Given("user is logged in")
     public void userIsLoggedIn() {
         user.setLogged(true);
+    }
+
+    @Then("the searched books should be empty and show a message saying so")
+    public void theSearchedBooksShouldBeEmptyAndShowAMessageSayingSo() {
+        System.out.println("there is no such book with this info");
+        assertTrue(isbn.isEmpty());
     }
 }

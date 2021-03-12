@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class logintest {
+public class loginSteps {
      Admin b=new Admin();
 
      @Given("the correct password is {int} and correct id is {int}")
@@ -29,15 +29,6 @@ public class logintest {
 
    @Then("don't give admin authorities")
     public void don_t_give_admin_authorities() {
-
         assertFalse(b.isLogged());
     }
-
-    @Then("show a wrong info massage")
-    public void show_a_wrong_info_massage() {
-
-    }
-
-
-
 }
