@@ -1,6 +1,12 @@
 package Code;
 
 public class book {
+
+    public  String author;
+    public  String title;
+    public  String ISBN;
+    public String signature;
+
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -16,11 +22,6 @@ public class book {
     public void setSignature(String signature) {
         this.signature = signature;
     }
-
-    public  String author;
-    public  String title;
-    public  String ISBN;
-    public String signature;
 
     public String getAuthor() {
         return author;
@@ -53,16 +54,18 @@ public class book {
     public boolean checkISBN(String ISBN){
         int sum = 0;
         char ar[] = ISBN.toCharArray();
-        boolean lengthFlag = ar.length != 10;
-        try{
+        boolean lengthFlag = ar.length == 10;
+        if(lengthFlag){
             for (int i = 0; i < 10; i++) {
-                sum += ar[10 - i] * i;
-            }}
-        catch(Exception e){
+                sum += Integer.parseInt(String.valueOf(ar[i])) * (10-i);
 
+            }
+            int avg = sum % 11;
+            return (avg==0);
         }
-        int avg = sum % 11;
-        return (avg==0);
+        else {
+            return false;
+        }
     }
     public void print(){
         System.out.println(this.getTitle()+"\t"+this.getAuthor()+"\t"+this.getISBN()+"\t"+this.getSignature()+"\n");

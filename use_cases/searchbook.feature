@@ -21,22 +21,19 @@ Feature: search for a book
 
   Scenario:Searching for a substring of the ISBN
     Given the user entered a "substring" for ISBN
-    When the user search for a book by ISBN "1466272325"
+    When the user search for a book by ISBN "14"
     Then a list of all books that have the ISBN should be printed on the console
-
 
   Scenario:Searching for a substring as a admin
     Given the user entered a "substring" for author
     Given user is logged in
-    When the user search for a book by author "William Golding"
+    When the user search for a book by author "William"
     Then a list of all books that have the author should be printed on the console
-
-
 
   Scenario:search failed
     Given the user entered a substring for book
-    When the user search for a book by ISBN "1"
-    Then show warning
+    When the user search for a book by ISBN "1214463"
+    Then the searched books should be empty and show a message saying so
 
   Scenario:Searching for multiple books
     When the user search for a book by title "Lord"

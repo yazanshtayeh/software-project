@@ -11,4 +11,3 @@ Feature: Admin login
  Scenario:  Administrator has the wrong password
     When  user fills id with 11 and password with 11
     Then  don't give admin authorities
-    And  show a wrong info massage

@@ -13,8 +13,11 @@ public class library {
         books.addAll(a);
     }
 
-    public  void addbook(book a){
+    public  void addbook(book a,Admin admin){
+        if(admin.logged)
         books.add(a);
+        else
+            System.out.println("you Should ba an admin");
     }
     public  void addbook(String title,String author,String isbn,String signature){
        book n=new book(title,author,isbn,signature);
@@ -48,7 +51,7 @@ public class library {
     public ArrayList<book> searchByISBN(String isbn){
         ArrayList<book> searched=new ArrayList<>();
         for(int i=0;i<books.size();i++){
-            if(books.get(i).getISBN().equals(isbn))
+            if(books.get(i).getISBN().contains(isbn))
                 searched.add(books.get(i));
 
         }
