@@ -31,7 +31,7 @@ public class library {
     public ArrayList<book> searchByAuthor(String author){
         ArrayList<book> searched=new ArrayList<>();
         for(int i=0;i<books.size();i++){
-            if(books.get(i).getAuthor().contentEquals(author))
+            if(books.get(i).getAuthor().contains(author))
                 searched.add(books.get(i));
         }
         return searched;
@@ -39,7 +39,7 @@ public class library {
     public ArrayList<book> searchByTitle(String title){
         ArrayList<book> searched=new ArrayList<>();
         for(int i=0;i<books.size();i++){
-            if(books.get(i).getTitle().contentEquals(title)){
+            if(books.get(i).getTitle().contains(title)){
                 searched.add(books.get(i));
             }
         }
