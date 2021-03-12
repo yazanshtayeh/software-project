@@ -5,6 +5,13 @@ public class Admin {
      int pass;
     boolean logged;
 
+    public  Admin(){
+        this.setId(123);
+        this.setPass(123);
+        this.setLogged(false);
+    }
+
+
     public boolean isLogged() {
         return logged;
     }
@@ -41,9 +48,5 @@ public class Admin {
     public void setPass(int pass) {
         this.pass = pass;
     }
-    public  Admin(){
-        this.setId(123);
-        this.setPass(123);
-        this.setLogged(false);
-    }
+
 }
