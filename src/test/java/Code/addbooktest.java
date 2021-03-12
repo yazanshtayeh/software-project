@@ -10,6 +10,7 @@ import static org.junit.Assert.assertTrue;
 public class addbooktest {
     book b=new book();
     Admin user=new Admin();
+    library x=new library();
     @Given("{string} is logged in")
     public void is_logged_in(String string) {
 
@@ -17,22 +18,16 @@ public class addbooktest {
 
     @When("{string} and {string} and {string} is filled")
     public void and_and_is_filled(String title, String author, String signture) {
-        book.setTitle(title);;
-        book.setAuthor(author);
-        book.setSignture(signture);
+
+        b.setTitle(title);;
+        b.setAuthor(author);
+        b.setSignature(signture);
     }
 
     @When("{string} is filled and valid")
     public void is_filled_and_valid(String ISBN) {
         assertTrue(b.checkISBN(ISBN));
     }
-
-    @When("{string} is pressed")
-    public void is_pressed(String string) {
-
-    }
-
-
 
 
     @Given("admin is not logged in")
@@ -48,6 +43,6 @@ public class addbooktest {
 
     @Then("add the book information to the library")
     public void addTheBookInformationToTheLibrary() {
-        library.addbook(b);
+        x.addbook(b);
     }
 }

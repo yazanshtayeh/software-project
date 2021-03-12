@@ -26,8 +26,6 @@ public class Admin {
     }
 
 
-
-
     public int getId() {
         return id;
     }

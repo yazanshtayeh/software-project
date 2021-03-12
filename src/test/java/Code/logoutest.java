@@ -4,6 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class logoutest {
@@ -13,17 +15,14 @@ Admin admin =new Admin();
         admin.setLogged(true);
     }
 
-    @When("logout is pressed")
-    public void logout_is_pressed() {
-    admin.logOut();
+    @When("admin logs out")
+    public void admin_logs_out() {
+        admin.logOut();
     }
 
     @Then("remove admin authorities")
     public void remove_admin_authorities() {
-        assertTrue(true);
+        assertFalse(admin.isLogged());
         System.out.println("logged Out");
     }
-
-
-
 }
