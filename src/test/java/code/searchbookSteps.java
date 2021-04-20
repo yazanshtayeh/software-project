@@ -1,11 +1,8 @@
-package Code;
+package code;
 
-import Code.book;
-import Code.library;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.messages.Messages;
 import io.cucumber.datatable.DataTable;
 
 
