@@ -24,8 +24,7 @@ public class Library {
     }
 
     public  void addbook(Book a, Admin admin){
-        if(admin.logged)
-        books.add(a);
+        if(admin.logged){books.add(a);}
         else
             logger.log(Level.INFO,"you Should ba an admin");
     }
