@@ -9,23 +9,23 @@ import java.util.logging.Logger;
 public class Library {
     Logger logger
             = Logger.getLogger(Library.class.getName());
-    private List<Book> Books =new ArrayList<>(1);
+    private List<Book> books =new ArrayList<>(1);
     public void getBooks(int i){
-        Books.get(0).print();
+        books.get(i).print();
     }
     public boolean empty(){
-       return Books.isEmpty();
+       return books.isEmpty();
     }
     public Library() {
     }
 
     public Library(List<Book> a) {
-        Books.addAll(a);
+        books.addAll(a);
     }
 
     public  void addbook(Book a, Admin admin){
         if(admin.logged)
-        Books.add(a);
+        books.add(a);
         else
             logger.log(Level.INFO,"you Should ba an admin");
     }
@@ -37,32 +37,32 @@ public class Library {
            n.setTitle(title);
            n.setISBN(isbn);
            n.setSignature(signature);
-           Books.add(n);
+           books.add(n);
        }
     }
 
     public List<Book> searchByAuthor(String author){
         List<Book> searched=new ArrayList<>();
-        for(int i = 0; i< Books.size(); i++){
-            if(Books.get(i).getAuthor().contains(author))
-                searched.add(Books.get(i));
+        for(int i = 0; i< books.size(); i++){
+            if(books.get(i).getAuthor().contains(author))
+                searched.add(books.get(i));
         }
         return searched;
     }
     public List<Book> searchByTitle(String title){
         List<Book> searched=new ArrayList<>();
-        for(int i = 0; i< Books.size(); i++){
-            if(Books.get(i).getTitle().contains(title)){
-                searched.add(Books.get(i));
+        for(int i = 0; i< books.size(); i++){
+            if(books.get(i).getTitle().contains(title)){
+                searched.add(books.get(i));
             }
         }
         return searched;
     }
     public List<Book> searchByISBN(String isbn){
         List<Book> searched=new ArrayList<>();
-        for(int i = 0; i< Books.size(); i++){
-            if(Books.get(i).getISBN().contains(isbn))
-                searched.add(Books.get(i));
+        for(int i = 0; i< books.size(); i++){
+            if(books.get(i).getISBN().contains(isbn))
+                searched.add(books.get(i));
 
         }
         return searched;
