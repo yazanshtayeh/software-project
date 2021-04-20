@@ -6,10 +6,10 @@ import java.util.logging.Logger;
 public class Book {
     Logger logger
             = Logger.getLogger(Book.class.getName());
-    public  String author;
-    public  String title;
-    public  String ISBN;
-    public String signature;
+    private   String author;
+    private  String title;
+    private  String ISBN;
+    private String signature;
 
     public void setAuthor(String author) {
         this.author = author;
