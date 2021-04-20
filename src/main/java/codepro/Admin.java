@@ -17,10 +17,12 @@ public class Admin {
     }
 
     public boolean login(int a , int b) {
-        if(a==this.id&&b==this.pass)
+        if(a==this.id&&b==this.pass){
             logged=true;
+            System.out.println("logged in successfully");
+        }
         else
-            System.out.println("not admin");
+            System.out.println("you entered wrong information");
         return logged;
     }
 

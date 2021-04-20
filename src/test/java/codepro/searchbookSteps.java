@@ -47,7 +47,7 @@ public class searchbookSteps {
             System.out.println("library is empty");
             Assert_title = false;
         } else {
-            System.out.println("title\tauthor\tISBN\tsignature\n");
+           System.out.println("_______________________________________________________________");
             for (int i = 0; i < title.size(); i++)
                 title.get(i).print();
             Assert_title = true;
@@ -67,7 +67,7 @@ public class searchbookSteps {
             System.out.println("library is empty");
             Assert_author = false;
         } else {
-            System.out.println("title\tauthor\tISBN\tsignature\n");
+            System.out.println("_______________________________________________________________");
             for (int i = 0; i < author.size(); i++)
                 author.get(i).print();
             Assert_author = true;
@@ -91,7 +91,7 @@ public class searchbookSteps {
             System.out.println("library is empty");
             Assert_isbn = false;
         } else {
-            System.out.println("title\tauthor\tISBN\tsignature\n");
+          System.out.println("_______________________________________________________________");
             for (int i = 0; i < isbn.size(); i++)
                 isbn.get(i).print();
             Assert_isbn = true;
