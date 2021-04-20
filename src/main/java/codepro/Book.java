@@ -19,8 +19,8 @@ public class Book {
         this.title = title;
     }
 
-    public void setISBN(String ISBN) {
-        this.isbn = ISBN;
+    public void setISBN(String isbn) {
+        this.isbn = isbn;
     }
 
     public void setSignature(String signature) {
@@ -55,9 +55,9 @@ public class Book {
             setSignature(s);
     }
 
-    public boolean checkISBN(String ISBN){
+    public boolean checkISBN(String isbn){
         int sum = 0;
-        char []ar = ISBN.toCharArray();
+        char []ar = isbn.toCharArray();
         boolean lengthFlag = ar.length == 10;
         if(lengthFlag){
             for (int i = 0; i < 10; i++) {
@@ -72,6 +72,7 @@ public class Book {
         }
     }
     public void print(){
-        logger.log(Level.INFO, this.getTitle()+"\t"+this.getAuthor()+"\t"+this.getISBN()+"\t"+this.getSignature()+"\n");
+        String n =String.format(this.getTitle()+"\t"+this.getAuthor()+"\t"+this.getISBN()+"\t"+this.getSignature()+"\n");
+        logger.log(Level.INFO,n );
     }
 }
