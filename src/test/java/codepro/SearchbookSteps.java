@@ -17,9 +17,9 @@ import static org.junit.Assert.assertTrue;
 public class SearchbookSteps {
     Admin user =new Admin();
     Library lib = new Library();
-    ArrayList<Book> title = new ArrayList<>();
-    ArrayList<Book> author = new ArrayList<>();
-    ArrayList<Book> isbn = new ArrayList<>();
+    List<Book> title = new ArrayList<>();
+    List<Book> author = new ArrayList<>();
+    List<Book> isbn = new ArrayList<>();
     boolean Assert_title = false;
     boolean Assert_author = false;
     boolean Assert_isbn = false;
