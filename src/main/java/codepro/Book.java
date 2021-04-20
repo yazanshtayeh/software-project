@@ -3,9 +3,9 @@ package codepro;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class book {
+public class Book {
     Logger logger
-            = Logger.getLogger(book.class.getName());
+            = Logger.getLogger(Book.class.getName());
     public  String author;
     public  String title;
     public  String ISBN;
@@ -45,10 +45,10 @@ public class book {
 
 
 
-    public book() {
+    public Book() {
     }
 
-    public book(String a,String t,String i,String s){
+    public Book(String a, String t, String i, String s){
             setAuthor(a);
             setTitle(t);
             setISBN(i);

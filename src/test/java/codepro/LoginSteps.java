@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class loginSteps {
+public class LoginSteps {
      Admin b=new Admin();
 
      @Given("the correct password is {int} and correct id is {int}")

@@ -7,9 +7,9 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import java.util.logging.*;
-public class logoutSteps {
+public class LogoutSteps {
     Logger logger
-            = Logger.getLogger(logoutSteps.class.getName());
+            = Logger.getLogger(LogoutSteps.class.getName());
     Admin admin =new Admin();
     @Given("admin is logged in")
     public void admin_is_logged_in() {

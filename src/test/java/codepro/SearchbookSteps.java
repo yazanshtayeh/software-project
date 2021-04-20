@@ -14,18 +14,18 @@ import java.util.logging.Logger;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class searchbookSteps {
+public class SearchbookSteps {
     Admin user =new Admin();
-    library lib = new library();
-    ArrayList<book> title = new ArrayList<>();
-    ArrayList<book> author = new ArrayList<>();
-    ArrayList<book> isbn = new ArrayList<>();
+    Library lib = new Library();
+    ArrayList<Book> title = new ArrayList<>();
+    ArrayList<Book> author = new ArrayList<>();
+    ArrayList<Book> isbn = new ArrayList<>();
     boolean Assert_title = false;
     boolean Assert_author = false;
     boolean Assert_isbn = false;
     List<String> data;
     Logger logger
-            = Logger.getLogger(searchbookSteps.class.getName());
+            = Logger.getLogger(SearchbookSteps.class.getName());
 
     @Given("those books are contained in the library")
     public void thoseBooksAreContainedInTheLibrary(DataTable table) {

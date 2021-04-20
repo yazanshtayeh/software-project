@@ -7,10 +7,10 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class addbookSteps {
-    book b=new book();
+public class AddbookSteps {
+    Book b=new Book();
     Admin user=new Admin();
-    library x=new library();
+    Library x=new Library();
     boolean correct;
 
 
@@ -38,8 +38,8 @@ public class addbookSteps {
     public void addTheBookInformationToTheLibrary() {
         if(correct){
             x.addbook(b,user);
-            x.books.get(0).print();
-            assertFalse(x.books.isEmpty());
+            x.Books.get(0).print();
+            assertFalse(x.Books.isEmpty());
         }
         else
             assertTrue(false);
@@ -52,6 +52,6 @@ public class addbookSteps {
     @Then("show warning;")
     public void showWarning() {
         x.addbook(b,user);
-        assertTrue(x.books.isEmpty());
+        assertTrue(x.Books.isEmpty());
     }
 }
