@@ -9,7 +9,13 @@ import java.util.logging.Logger;
 public class Library {
     Logger logger
             = Logger.getLogger(Library.class.getName());
-    public List<Book> Books =new ArrayList<>(1);
+    private List<Book> Books =new ArrayList<>(1);
+    public void getBooks(int i){
+        Books.get(0).print();
+    }
+    public boolean empty(){
+       return Books.isEmpty();
+    }
     public Library() {
     }
 

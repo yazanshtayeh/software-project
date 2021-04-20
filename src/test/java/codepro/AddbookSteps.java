@@ -38,8 +38,8 @@ public class AddbookSteps {
     public void addTheBookInformationToTheLibrary() {
         if(correct){
             x.addbook(b,user);
-            x.Books.get(0).print();
-            assertFalse(x.Books.isEmpty());
+            x.getBooks(0);
+            assertFalse(x.empty());
         }
         else
             assertTrue(false);
@@ -52,6 +52,6 @@ public class AddbookSteps {
     @Then("show warning;")
     public void showWarning() {
         x.addbook(b,user);
-        assertTrue(x.Books.isEmpty());
+        assertTrue(x.empty());
     }
 }
