@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class library {
     Logger logger
-            = Logger.getLogger(Admin.class.getName());
+            = Logger.getLogger(book.class.getName());
     public  ArrayList<book> books=new ArrayList<>(1);
     public library() {
     }

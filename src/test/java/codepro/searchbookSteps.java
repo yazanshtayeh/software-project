@@ -25,7 +25,7 @@ public class searchbookSteps {
     boolean Assert_isbn = false;
     List<String> data;
     Logger logger
-            = Logger.getLogger(logoutSteps.class.getName());
+            = Logger.getLogger(searchbookSteps.class.getName());
 
     @Given("those books are contained in the library")
     public void thoseBooksAreContainedInTheLibrary(DataTable table) {

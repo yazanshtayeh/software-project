@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class book {
     Logger logger
-            = Logger.getLogger(Admin.class.getName());
+            = Logger.getLogger(book.class.getName());
     public  String author;
     public  String title;
     public  String ISBN;
