@@ -8,7 +8,7 @@ public class Book {
             = Logger.getLogger(Book.class.getName());
     private   String author;
     private  String title;
-    private  String ISBN;
+    private  String isbn;
     private String signature;
 
     public void setAuthor(String author) {
@@ -20,7 +20,7 @@ public class Book {
     }
 
     public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+        this.isbn = ISBN;
     }
 
     public void setSignature(String signature) {
@@ -36,7 +36,7 @@ public class Book {
     }
 
     public String getISBN() {
-        return ISBN;
+        return isbn;
     }
 
     public String getSignature() { return signature; }
@@ -57,7 +57,7 @@ public class Book {
 
     public boolean checkISBN(String ISBN){
         int sum = 0;
-        char ar[] = ISBN.toCharArray();
+        char []ar = ISBN.toCharArray();
         boolean lengthFlag = ar.length == 10;
         if(lengthFlag){
             for (int i = 0; i < 10; i++) {
