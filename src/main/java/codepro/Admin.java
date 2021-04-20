@@ -1,10 +1,14 @@
 package codepro;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Admin {
      int id;
      int pass;
     boolean logged;
-
+    Logger logger
+            = Logger.getLogger(Admin.class.getName());
     public  Admin(){
         this.setId(123);
         this.setPass(123);
@@ -19,10 +23,10 @@ public class Admin {
     public boolean login(int a , int b) {
         if(a==this.id&&b==this.pass){
             logged=true;
-            System.out.println("logged in successfully");
+            logger.log(Level.INFO,"logged in successfully");
         }
         else
-            System.out.println("you entered wrong information");
+            logger.log(Level.INFO,"you entered wrong information");
         return logged;
     }
 

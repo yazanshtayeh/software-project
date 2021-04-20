@@ -8,6 +8,8 @@ import io.cucumber.datatable.DataTable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -22,6 +24,8 @@ public class searchbookSteps {
     boolean Assert_author = false;
     boolean Assert_isbn = false;
     List<String> data;
+    Logger logger
+            = Logger.getLogger(logoutSteps.class.getName());
 
     @Given("those books are contained in the library")
     public void thoseBooksAreContainedInTheLibrary(DataTable table) {
@@ -30,9 +34,6 @@ public class searchbookSteps {
             String[] specs=data.get(i).split("-");
             lib.addbook(specs[0],specs[1],specs[2],specs[3]);
         }
-//        for(int i=0;i<lib.books.size();i++){
-//            System.out.println(lib.books.get(i).getTitle()+lib.books.get(i).getAuthor()+lib.books.get(i).getISBN()+lib.books.get(i).getSignature());
-//        }
     }
 
 
@@ -44,10 +45,10 @@ public class searchbookSteps {
     @Then("a list of all books that have the title should be printed on the console")
     public void a_list_of_all_books_that_have_the_title_should_be_printed_on_the_console() {
         if (title.isEmpty()) {
-            System.out.println("library is empty");
+            logger.log(Level.INFO,"library is empty");
             Assert_title = false;
         } else {
-           System.out.println("_______________________________________________________________");
+            logger.log(Level.INFO,"_______________________________________________________________");
             for (int i = 0; i < title.size(); i++)
                 title.get(i).print();
             Assert_title = true;
@@ -64,10 +65,10 @@ public class searchbookSteps {
     public void the_user_search_for_a_book_by_author(String string) {
         author = lib.searchByAuthor(string);
         if (author.isEmpty()) {
-            System.out.println("library is empty");
+            logger.log(Level.INFO,"library is empty");
             Assert_author = false;
         } else {
-            System.out.println("_______________________________________________________________");
+            logger.log(Level.INFO,"_______________________________________________________________");
             for (int i = 0; i < author.size(); i++)
                 author.get(i).print();
             Assert_author = true;
@@ -88,10 +89,10 @@ public class searchbookSteps {
     public void the_user_search_for_a_book_by_isbn(String string) {
         isbn = lib.searchByISBN(string);
         if (isbn.isEmpty()) {
-            System.out.println("library is empty");
+            logger.log(Level.INFO,"library is empty");
             Assert_isbn = false;
         } else {
-          System.out.println("_______________________________________________________________");
+            logger.log(Level.INFO,"_______________________________________________________________");
             for (int i = 0; i < isbn.size(); i++)
                 isbn.get(i).print();
             Assert_isbn = true;
@@ -115,7 +116,7 @@ public class searchbookSteps {
 
     @Then("the searched books should be empty and show a message saying so")
     public void theSearchedBooksShouldBeEmptyAndShowAMessageSayingSo() {
-        System.out.println("there is no such book with this info");
+        logger.log(Level.INFO,"there is no such book with this info");
         assertTrue(isbn.isEmpty());
     }
 }

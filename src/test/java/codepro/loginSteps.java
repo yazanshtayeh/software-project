@@ -11,7 +11,7 @@ public class loginSteps {
 
      @Given("the correct password is {int} and correct id is {int}")
     public void theCorrectPasswordIsAndCorrectIdIs(int arg0, int arg1) {
-        b.setPass(arg0) ;
+        b.setPass(arg0);
         b.setId(arg1);
     }
     @When("user fills id with {int} and password with {int}")

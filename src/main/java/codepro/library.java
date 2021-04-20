@@ -1,10 +1,13 @@
 package codepro;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class library {
-
+    Logger logger
+            = Logger.getLogger(Admin.class.getName());
     public  ArrayList<book> books=new ArrayList<>(1);
     public library() {
     }
@@ -17,7 +20,7 @@ public class library {
         if(admin.logged)
         books.add(a);
         else
-            System.out.println("you Should ba an admin");
+            logger.log(Level.INFO,"you Should ba an admin");
     }
     public  void addbook(String title,String author,String isbn,String signature){
        book n=new book(title,author,isbn,signature);

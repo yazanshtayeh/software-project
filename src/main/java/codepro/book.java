@@ -1,7 +1,11 @@
 package codepro;
 
-public class book {
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+public class book {
+    Logger logger
+            = Logger.getLogger(Admin.class.getName());
     public  String author;
     public  String title;
     public  String ISBN;
@@ -68,6 +72,6 @@ public class book {
         }
     }
     public void print(){
-        System.out.println(this.getTitle()+"\t"+this.getAuthor()+"\t"+this.getISBN()+"\t"+this.getSignature()+"\n");
+        logger.log(Level.INFO, this.getTitle()+"\t"+this.getAuthor()+"\t"+this.getISBN()+"\t"+this.getSignature()+"\n");
     }
 }

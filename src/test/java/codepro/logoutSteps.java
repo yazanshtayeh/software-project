@@ -6,9 +6,11 @@ import io.cucumber.java.en.When;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
+import java.util.logging.*;
 public class logoutSteps {
-Admin admin =new Admin();
+    Logger logger
+            = Logger.getLogger(logoutSteps.class.getName());
+    Admin admin =new Admin();
     @Given("admin is logged in")
     public void admin_is_logged_in() {
         admin.setLogged(true);
@@ -22,6 +24,6 @@ Admin admin =new Admin();
     @Then("remove admin authorities")
     public void remove_admin_authorities() {
         assertFalse(admin.isLogged());
-        System.out.println("logged Out");
+        logger.log(Level.INFO,"logged Out");
     }
 }
