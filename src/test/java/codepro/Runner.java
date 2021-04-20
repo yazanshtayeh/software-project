@@ -1,4 +1,4 @@
-package code;
+package codepro;
 
 import org.junit.runner.RunWith;
 
