@@ -72,7 +72,7 @@ public class Book {
         }
     }
     public void print(){
-        String n =String.format(this.getTitle()+"\t"+this.getAuthor()+"\t"+this.getISBN()+"\t"+this.getSignature()+"\n");
+        String n =String.format(this.getTitle(),"\t"+this.getAuthor(),"\t"+this.getISBN(),"\t"+this.getSignature(),"\n");
         logger.log(Level.INFO,n );
     }
 }
